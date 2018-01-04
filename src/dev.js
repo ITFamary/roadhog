@@ -71,5 +71,6 @@ export default function runDev(opts = {}) {
     afterServer(devServer) {
       returnedWatchConfig(devServer);
     },
+    openBrowser: true,
   });
 }
