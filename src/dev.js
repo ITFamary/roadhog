@@ -1,6 +1,7 @@
 import { resolve } from 'path';
 import dev from 'af-webpack/dev';
 import chalk from 'chalk';
+import { hook, shouldHook } from 'local-api-mocker';
 import getConfig, {
   watchConfigs,
   unwatchConfigs,
@@ -58,7 +59,11 @@ export default function runDev(opts = {}) {
     proxy: config.proxy || {},
     beforeServer(devServer) {
       try {
-        applyMock(devServer);
+        if (shouldHook()) {
+          hook(devServer);
+        } else {
+          applyMock(devServer);
+        }
       } catch (e) {
         console.log(e);
       }
