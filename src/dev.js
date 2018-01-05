@@ -61,9 +61,10 @@ export default function runDev(opts = {}) {
       try {
         if (shouldHook()) {
           hook(devServer);
-        } else {
-          applyMock(devServer);
+          // } else {
+          //   applyMock(devServer);
         }
+        applyMock(devServer);
       } catch (e) {
         console.log(e);
       }
