@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import dev from 'af-webpack/dev';
 import chalk from 'chalk';
-import { hook, shouldHook } from 'local-api-mocker';
+import { hook, shouldHook } from '@mingshz/local-api-mocker';
 import getConfig, {
   watchConfigs,
   unwatchConfigs,
