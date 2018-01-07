@@ -8,3 +8,8 @@ npm-debug.log*
 
 # tnpm cache directory
 /test/**/.cache
+/.idea
+package-lock.json
+.mock/
+.vscode/
+node_modules/

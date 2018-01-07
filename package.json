@@ -53,7 +53,7 @@
     "glob": "^7.1.2",
     "graceful-process": "^1.0.0",
     "is-plain-object": "^2.0.3",
-    "@mingshz/local-api-mocker": "0.0.1",
+    "@mingshz/local-api-mocker": "0.0.2",
     "parse-json-pretty": "^0.1.0",
     "strip-json-comments": "^2.0.1",
     "umi-test": "^0.2.0",
