@@ -85,6 +85,100 @@
           }
         }
       }
+    },
+    "/users":{
+      "get":{
+        "summary": "获取登录状态",
+        "description": "包含权限信息",
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "type": "number",
+            "required": false
+          }
+        ],
+        "responses":{
+          "200":{
+            "description":"正常结果",
+            "schema":{
+              "type":"object",
+              "required":[
+                "list","pagination"
+              ],
+              "properties":{
+                "list": {
+                  "type":"array",
+                  "items":{
+                    "$ref":"#/definitions/UserModel"
+                  },
+                  "maxItems":{
+                    "__script":"pageSize||20"
+                  },
+                  "minItems":{
+                    "__script":"pageSize||20"
+                  }
+                },
+                "pagination":{
+                  "type":"object",
+                  "required":[
+                    "current","pageSize","total"
+                  ],
+                  "properties":{
+                    "current":{
+                      "type":"integer",
+                      "description":"当前页数",
+                      "default":{
+                        "__script":"current?parseInt(current):1"
+                      }
+                    },
+                    "pageSize":{
+                      "type":"integer",
+                      "description":"每页大小",
+                      "default":{
+                        "__script":"pageSize?parseInt(pageSize):20"
+                      }
+                    },
+                    "total":{
+                      "type":"integer",
+                      "description":"总数据量",
+                      "default":100000
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "UserModel":{
+      "type":"object",
+      "required":[
+        "id","loginName","role"
+      ],
+      "properties":{
+        "id":{
+          "type":"number",
+          "description":"用户主键"
+        },
+        "loginName":{
+          "type":"string",
+          "description":"用户登录名"
+        },
+        "role":{
+          "type":"string",
+          "description":"角色"
+        }
+      }
     }
   }
 }
