@@ -1,6 +1,6 @@
 {
   "name": "@mingshz/roadhog",
-  "version": "2.1.0-1",
+  "version": "2.1.0-2",
   "description": "Cli tool for creating react apps, configurable version of create-react-app.",
   "bin": {
     "roadhog": "./bin/roadhog.js"
@@ -54,7 +54,7 @@
     "graceful-process": "^1.0.0",
     "is-plain-object": "^2.0.3",
     "lodash.escaperegexp": "^4.1.2",
-    "@mingshz/local-api-mocker": "0.0.9",
+    "@mingshz/local-api-mocker": "0.0.10",
     "parse-json-pretty": "^0.1.0",
     "strip-json-comments": "^2.0.1",
     "umi-test": "^0.3.0",
